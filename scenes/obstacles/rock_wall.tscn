@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ujd220g04vjv"]
+
+[ext_resource type="Script" path="res://scenes/obstacles/rock_wall.gd" id="1_1fkmg"]
+[ext_resource type="Texture2D" uid="uid://c64orejeht4t0" path="res://art/textures/rock.webp" id="2_51g4k"]
+
+[node name="RockWall" type="CollisionPolygon2D"]
+texture_repeat = 2
+script = ExtResource("1_1fkmg")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture = ExtResource("2_51g4k")
