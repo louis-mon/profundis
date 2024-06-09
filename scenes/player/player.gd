@@ -8,9 +8,7 @@ func set_velocity_from_input(delta: float):
 	velocity = vel
 	
 func _process(delta):
-	get_parent().get_node("FoodDetection").position = position
-	get_parent().get_node("Mouth").position = position
-	
+	pass
 
 func _physics_process(delta):
 	set_velocity_from_input(delta)

@@ -13,13 +13,11 @@ radius = 128.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_olua5"]
 radius = 8.0
 
-[node name="Player" type="Node2D"]
-
-[node name="Body" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_wytuu")
 
-[node name="CollisionShape" type="CollisionShape2D" parent="Body"]
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_i4f84")
 
 [node name="FoodDetection" type="Area2D" parent="."]
