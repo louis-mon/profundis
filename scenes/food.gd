@@ -14,20 +14,16 @@ func _ready():
 	set_collision_layer_value(Constants.food_layer, true)
 	set_collision_mask_value(Constants.food_layer, true)
 
-
-func _integrate_forces(state):
-	if eaten:
-		position = target.global_position
-	elif target != null:
-		var direction = target.global_position - global_position
-		linear_velocity = direction.normalized() * speed
-
 func _physics_process(delta):
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if eaten:
+		position = target.global_position
+	elif target != null:
+		var direction = target.global_position - global_position
+		position += direction.normalized() * speed * delta
 
 
 func _on_eat_food():
@@ -42,4 +38,4 @@ func _on_eat_food():
 
 func _on_attract_food(body: Node2D):
 	target = body
-	can_sleep  = false
+	freeze = true

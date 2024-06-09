@@ -9,6 +9,9 @@
 [node name="Food" parent="." instance=ExtResource("2_qqxb4")]
 position = Vector2(648, 584)
 
+[node name="Food2" parent="." instance=ExtResource("2_qqxb4")]
+position = Vector2(760, 578.5)
+
 [node name="WallArea" parent="." instance=ExtResource("2_x4bbl")]
 
 [node name="wall1" parent="WallArea" instance=ExtResource("3_ug0ym")]
