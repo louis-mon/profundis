@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://p0qk1gi8s6pm"]
+[gd_scene load_steps=3 format=3 uid="uid://p0qk1gi8s6pm"]
 
 [ext_resource type="PackedScene" uid="uid://ujd220g04vjv" path="res://scenes/rockwall.tscn" id="1_uvjux"]
+[ext_resource type="PackedScene" uid="uid://cbxsfqom3j2ck" path="res://scenes/food.tscn" id="2_qqxb4"]
 
 [node name="StartRoom" type="Node2D"]
 
@@ -21,3 +22,6 @@ polygon = PackedVector2Array(-2968, -144, -1944, -304, -1312, -328, -536, -280, 
 [node name="wall4" parent="Wall" instance=ExtResource("1_uvjux")]
 position = Vector2(120, -104)
 polygon = PackedVector2Array(-160, 1280, -632, 2096, -744, 2896, -160, 3360, 352, 3032, 688, 1856, 496, 1272)
+
+[node name="Food" parent="." instance=ExtResource("2_qqxb4")]
+position = Vector2(648, 584)
