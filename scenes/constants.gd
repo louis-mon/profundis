@@ -2,7 +2,8 @@ extends Node
 
 class_name Constants
 
-static var food_layer = 2 << 10
+static var food_layer = 10
+static var player_speed = 800
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -3,7 +3,7 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	collision_mask = Constants.food_layer
+	set_collision_mask_value(Constants.food_layer, true)
 
 
 func _on_body_entered(body):
