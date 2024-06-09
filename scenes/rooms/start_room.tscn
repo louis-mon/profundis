@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://p0qk1gi8s6pm"]
+
+[ext_resource type="PackedScene" uid="uid://ujd220g04vjv" path="res://scenes/rockwall.tscn" id="1_uvjux"]
+
+[node name="StartRoom" type="Node2D"]
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="wall1" parent="Wall" instance=ExtResource("1_uvjux")]
+position = Vector2(-296, -352)
+polygon = PackedVector2Array(1680, 1352, 1368, 1736, 1392, 2464, 1544, 3184, 2216, 3408, 2872, 3080, 2832, 2128, 2552, 1384, 2000, 1240)
+
+[node name="wall2" parent="Wall" instance=ExtResource("1_uvjux")]
+position = Vector2(-88, 152)
+polygon = PackedVector2Array(-304, -80, -1912, -104, -2352, 304, -1248, 536, -208, 472)
+
+[node name="wall3" parent="Wall" instance=ExtResource("1_uvjux")]
+position = Vector2(432, 1184)
+polygon = PackedVector2Array(-2968, -144, -1944, -304, -1312, -328, -536, -280, -856, 320, -1456, 984, -2544, 1160, -3368, 504)
+
+[node name="wall4" parent="Wall" instance=ExtResource("1_uvjux")]
+position = Vector2(120, -104)
+polygon = PackedVector2Array(-160, 1280, -632, 2096, -744, 2896, -160, 3360, 352, 3032, 688, 1856, 496, 1272)
