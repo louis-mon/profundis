@@ -29,3 +29,6 @@ polygon = PackedVector2Array(-2968, -144, -1944, -304, -1312, -328, -536, -280, 
 [node name="wall4" parent="WallArea" instance=ExtResource("3_ug0ym")]
 position = Vector2(120, -104)
 polygon = PackedVector2Array(-160, 1280, -632, 2096, -744, 2896, -160, 3360, 352, 3032, 688, 1856, 496, 1272)
+
+[node name="wall5" parent="WallArea" instance=ExtResource("3_ug0ym")]
+polygon = PackedVector2Array(-1030, -431, -642, -189, -96, -843, 1129, -824, 1351, -539, 1212, -1034, 958, -1040, 926, -1409, 1434, -1504, 2044, -913, 1669, 109, 1815, 522, 2875, 325, 3440, -1764, 1383, -2609, -1252, -2126, -2509, -1599, -2852, -393)
