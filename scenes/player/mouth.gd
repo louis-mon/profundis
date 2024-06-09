@@ -7,4 +7,8 @@ func _ready():
 
 
 func _on_body_entered(body):
-	body.emit_signal("eat_food")
+	body.emit_signal("eat_food", true)
+
+
+func _on_body_exited(body):
+	body.emit_signal("eat_food", false)

@@ -37,3 +37,4 @@ script = ExtResource("3_xjeib")
 shape = SubResource("CircleShape2D_olua5")
 
 [connection signal="body_entered" from="Mouth" to="Mouth" method="_on_body_entered"]
+[connection signal="body_exited" from="Mouth" to="Mouth" method="_on_body_exited"]
