@@ -5,6 +5,8 @@ class_name Food
 # after this duration (in seconds), the food will disappear, unless 0
 @export var expiration: int
 
+@export var nutriment: FoodConfig.Nutriment
+
 signal eat_food(inside: bool)
 signal attract_food(body: Node2D)
 
@@ -20,6 +22,8 @@ var expired = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print(nutriment)
+	($Nutriment as Sprite2D).texture = FoodConfig.icon_textures[nutriment]
 	set_collision_layer_value(Constants.food_layer, true)
 	if expiration > 0:
 		$ExpirationTimer.start(expiration)
