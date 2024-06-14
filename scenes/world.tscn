@@ -13,3 +13,5 @@ position = Vector2(1072, 272)
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Rooms" parent="." instance=ExtResource("3_aks0v")]
+
+[connection signal="on_update_ui" from="Player" to="." method="_on_player_on_update_ui"]

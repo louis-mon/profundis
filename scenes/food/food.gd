@@ -22,7 +22,6 @@ var expired = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(nutriment)
 	($Nutriment as Sprite2D).texture = FoodConfig.icon_textures[nutriment]
 	set_collision_layer_value(Constants.food_layer, true)
 	if expiration > 0:
@@ -35,6 +34,7 @@ func _physics_process(delta):
 func _process(delta):
 	if target != null and !eaten and in_eat_zone:
 		eaten = true
+		target.eat_nutriment(nutriment)
 		kill()
 	if eaten:
 		position = target.global_position

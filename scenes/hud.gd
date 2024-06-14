@@ -1,6 +1,4 @@
-extends Node2D
-
-signal on_update_ui(player: Player)
+extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,7 +7,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Camera2D.position = $Player.position
+	pass
+	
+func update_ui(player: Player):
+	%EatGauge/Fill.size_flags_stretch_ratio = player.energy_ratio
+	%EatGauge/Empty.size_flags_stretch_ratio = 1 - player.energy_ratio
 
-func _on_player_on_update_ui(player):
-	on_update_ui.emit(player)

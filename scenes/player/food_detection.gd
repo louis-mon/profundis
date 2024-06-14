@@ -11,3 +11,6 @@ func _process(delta):
 	if (Input.is_action_just_pressed("eat")):
 		for food in get_overlapping_bodies():
 			food.emit_signal("attract_food", self)
+
+func eat_nutriment(nutriment: FoodConfig.Nutriment):
+	get_node("../").eat_nutriment(nutriment)

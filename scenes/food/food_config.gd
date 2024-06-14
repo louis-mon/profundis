@@ -23,13 +23,7 @@ static var icon_map := {
 	Nutriment.CAC: "tentacle.png",
 }
 
-static func map_dict(dict):
-	var res = {}
-	for i in icon_map:
-		res[i] = load("res://art/textures/food/%s" % icon_map[i]) \
-			if icon_map[i] \
-			else null
-	return res
-
-static var icon_textures = map_dict(icon_map)
+static var icon_textures = Dicts.map_dict(icon_map, func(path, _i): return load("res://art/textures/food/%s" % path) \
+			if path \
+			else null)
 	

@@ -34,6 +34,7 @@ nutriment = 1
 
 [node name="FoodSpawner" parent="." instance=ExtResource("4_wjq0r")]
 position = Vector2(256, 264)
+nutriment = 2
 
 [node name="Food" parent="." instance=ExtResource("4_jvu5u")]
-position = Vector2(204, -443)
+position = Vector2(864, 432)

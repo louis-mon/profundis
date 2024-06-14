@@ -1,6 +1,5 @@
 extends Node2D
 
-signal on_update_ui(player: Player)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,7 +8,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Camera2D.position = $Player.position
+	pass
 
-func _on_player_on_update_ui(player):
-	on_update_ui.emit(player)
+
+func _on_world_on_update_ui(player):
+	%Hud.update_ui(player)

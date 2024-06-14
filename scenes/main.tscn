@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://7ybakkqeuhei"]
+[gd_scene load_steps=4 format=3 uid="uid://7ybakkqeuhei"]
 
 [ext_resource type="PackedScene" uid="uid://dnqb3n2ttku30" path="res://scenes/world.tscn" id="1_0iyp7"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_abqbc"]
 [ext_resource type="PackedScene" uid="uid://dtdl0lncxf7yu" path="res://scenes/hud.tscn" id="2_vetpb"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_abqbc")
 
 [node name="World" parent="." instance=ExtResource("1_0iyp7")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="hud" parent="CanvasLayer" instance=ExtResource("2_vetpb")]
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("2_vetpb")]
+unique_name_in_owner = true
+
+[connection signal="on_update_ui" from="World" to="." method="_on_world_on_update_ui"]

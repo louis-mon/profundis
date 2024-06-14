@@ -3,7 +3,7 @@ extends CollisionShape2D
 
 var food_scene := preload("res://scenes/food/food.tscn")
 
-@export var spawn_time = 10
+@export var spawn_time = 3
 
 @export var max_spawns = 3
 
@@ -15,12 +15,12 @@ func _get_configuration_warnings():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$SpawnTimer.wait_time = spawn_time
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$SpawnTimer.wait_time = spawn_time
+	pass
 
 
 func _on_spawn_timer_timeout():
