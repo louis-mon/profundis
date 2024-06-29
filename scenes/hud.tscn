@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtdl0lncxf7yu"]
+[gd_scene load_steps=5 format=3 uid="uid://dtdl0lncxf7yu"]
 
 [ext_resource type="Script" path="res://scenes/hud.gd" id="1_q5pwk"]
 
@@ -14,17 +14,27 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wd4xo"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4n8b"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mebfv"]
+bg_color = Color(0.501961, 0.0156863, 0.133333, 0.768627)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -56,38 +66,33 @@ text = "Use joystick or arrow keys to move"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 10
 size_flags_stretch_ratio = 0.0
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Energy"
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_wd4xo")
-
-[node name="EatGauge" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/PanelContainer"]
+[node name="EatGauge" type="ProgressBar" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-
-[node name="Fill" type="ColorRect" parent="VBoxContainer/HBoxContainer/MarginContainer/PanelContainer/EatGauge"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.0
-color = Color(0.518626, 0, 0.113449, 1)
-
-[node name="Empty" type="ColorRect" parent="VBoxContainer/HBoxContainer/MarginContainer/PanelContainer/EatGauge"]
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(1, 1, 1, 0)
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_q4n8b")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mebfv")
+step = 0.0
+value = 50.0

@@ -10,6 +10,5 @@ func _process(delta):
 	pass
 	
 func update_ui(player: Player):
-	%EatGauge/Fill.size_flags_stretch_ratio = player.energy_ratio
-	%EatGauge/Empty.size_flags_stretch_ratio = 1 - player.energy_ratio
+	%EatGauge.value = player.energy_ratio * 100
 
