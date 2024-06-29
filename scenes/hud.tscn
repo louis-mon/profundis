@@ -30,7 +30,7 @@ expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mebfv"]
-bg_color = Color(0.501961, 0.0156863, 0.133333, 0.768627)
+bg_color = Color(0.501961, 0.0156863, 0.133333, 0.513726)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -95,4 +95,3 @@ size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_q4n8b")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mebfv")
 step = 0.0
-value = 50.0

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvor3b7txgs2w"]
+[gd_scene load_steps=8 format=3 uid="uid://bvor3b7txgs2w"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_wytuu"]
 [ext_resource type="Script" path="res://scenes/player/food_detection.gd" id="2_mp2t2"]
 [ext_resource type="Script" path="res://scenes/player/mouth.gd" id="3_xjeib"]
+[ext_resource type="PackedScene" uid="uid://buva157fnjw3i" path="res://cac.tscn" id="4_bwmqc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i4f84"]
 radius = 16.0
@@ -35,6 +36,8 @@ script = ExtResource("3_xjeib")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mouth"]
 shape = SubResource("CircleShape2D_olua5")
+
+[node name="Cac" parent="." instance=ExtResource("4_bwmqc")]
 
 [connection signal="body_entered" from="Mouth" to="Mouth" method="_on_body_entered"]
 [connection signal="body_exited" from="Mouth" to="Mouth" method="_on_body_exited"]
